@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: ricardochaves/python-lint@master
+      - uses: 654wak654/python-lint@master
         with:
           python-root-list: "tests"
