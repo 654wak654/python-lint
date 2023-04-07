@@ -1,7 +1,7 @@
 # python-lint
 
 <p align="left">
-  <a href="https://github.com/ricardochaves/python-lint"><img alt="All lints status" src="https://github.com/ricardochaves/python-lint/workflows/all-lints/badge.svg"></a></p>
+  <a href="https://github.com/654wak654/python-lint"><img alt="All lints status" src="https://github.com/654wak654/python-lint/workflows/all-lints/badge.svg"></a></p>
 
 ## About
 
@@ -22,16 +22,16 @@ Basic:
 
 ```yml
 steps:
-  - uses: actions/checkout@v1
-  - uses: ricardochaves/python-lint@v1.4.0
+  - uses: actions/checkout@v3
+  - uses: 654wak654/python-lint@v1.5.0
 ```
 
 Options:
 
 ```yml
 steps:
-  - uses: actions/checkout@v1
-  - uses: ricardochaves/python-lint@v1.4.0
+  - uses: actions/checkout@v3
+  - uses: 654wak654/python-lint@v1.5.0
     with:
       python-root-list: "python_alelo tests"
       use-pylint: false
@@ -66,7 +66,7 @@ isort $(extra-isort-options) $(python-root-list) -c --diff
 
 ## Versions used
 
-To identify the version used you must consult the [CHANGELOG.md](https://github.com/ricardochaves/python-lint-image/blob/master/CHANGELOG.md) of the image used in our [Dockerfile](https://github.com/ricardochaves/python-lint-image/blob/master/Dockerfile).
+To identify the version used you must consult the [CHANGELOG.md](https://github.com/654wak654/python-lint-image/blob/master/CHANGELOG.md) of the image used in our [Dockerfile](https://github.com/654wak654/python-lint-image/blob/master/Dockerfile).
 
 ## Test locally
 
@@ -80,7 +80,7 @@ Using `docker compose`, add the following service
 
 ```yml
   test-lint:
-    image: ricardobchaves6/python-lint-image:1.3.0
+    image: ghcr.io/654wak654/python-lint-image:1.5.0
     working_dir: /app
     volumes:
       - .:/app
