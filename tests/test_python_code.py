@@ -1,4 +1,4 @@
-"""Just one teste"""
+"""Just one test"""
 
 import uuid
 
