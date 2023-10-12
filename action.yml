@@ -42,7 +42,7 @@ inputs:
     required: false
     default: ""
   extra-black-options:
-    description: "Extra options: black --check $(extra-black-options) $(python-root-list)"
+    description: "Extra options: black --check --diff $(extra-black-options) $(python-root-list)"
     required: false
     default: ""
   extra-mypy-options:
