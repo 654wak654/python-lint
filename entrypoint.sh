@@ -67,9 +67,9 @@ fi
 
 if [ "$5" = true ] ; then
 
-    echo Running: black --check ${11} $1
+    echo Running: black --check --diff ${11} $1
 
-    black --check ${11} $1
+    black --check --diff ${11} $1
     exit_code=$?
 
     if [ "$exit_code" = "0" ]; then
