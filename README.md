@@ -23,7 +23,7 @@ Basic:
 ```yml
 steps:
   - uses: actions/checkout@v3
-  - uses: 654wak654/python-lint@v1.6.0
+  - uses: 654wak654/python-lint@v1.6.2
 ```
 
 Options:
@@ -31,7 +31,7 @@ Options:
 ```yml
 steps:
   - uses: actions/checkout@v3
-  - uses: 654wak654/python-lint@v1.6.0
+  - uses: 654wak654/python-lint@v1.6.2
     with:
       python-root-list: "python_alelo tests"
       use-pylint: false
@@ -80,7 +80,7 @@ Using `docker compose`, add the following service
 
 ```yml
   test-lint:
-    image: ghcr.io/654wak654/python-lint-image:1.6.0
+    image: ghcr.io/654wak654/python-lint-image:1.6.2
     working_dir: /app
     volumes:
       - .:/app
