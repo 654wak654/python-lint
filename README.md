@@ -13,6 +13,7 @@ This action must be used for aplication the bids:
 - [pycodestyle](https://pycodestyle.readthedocs.io)
 - [flake8](http://flake8.pycqa.org)
 - [mypy](http://mypy-lang.org/)
+- [ruff](https://astral.sh/ruff)
 
 ## Usage
 
@@ -22,16 +23,16 @@ Basic:
 
 ```yml
 steps:
-  - uses: actions/checkout@v3
-  - uses: 654wak654/python-lint@v1.6.2
+  - uses: actions/checkout@v4
+  - uses: 654wak654/python-lint@v1.6.3
 ```
 
 Options:
 
 ```yml
 steps:
-  - uses: actions/checkout@v3
-  - uses: 654wak654/python-lint@v1.6.2
+  - uses: actions/checkout@v4
+  - uses: 654wak654/python-lint@v1.6.3
     with:
       python-root-list: "python_alelo tests"
       use-pylint: false
@@ -40,12 +41,14 @@ steps:
       use-black: false
       use-mypy: false
       use-isort: false
+      use-ruff: false
       extra-pylint-options: ""
       extra-pycodestyle-options: ""
       extra-flake8-options: ""
       extra-black-options: ""
       extra-mypy-options: ""
       extra-isort-options: ""
+      extra-ruff-options: ""
 ```
 
 Command build logic list:
@@ -62,6 +65,8 @@ black --check --diff $(extra-black-options) $(python-root-list)
 mypy $(extra-mypy-options) $(python-root-list)
 
 isort $(extra-isort-options) $(python-root-list) -c --diff
+
+ruff check $(extra-ruff-options) $(python-root-list)
 ```
 
 ## Versions used
@@ -80,7 +85,7 @@ Using `docker compose`, add the following service
 
 ```yml
   test-lint:
-    image: ghcr.io/654wak654/python-lint-image:1.6.2
+    image: ghcr.io/654wak654/python-lint-image:1.6.3
     working_dir: /app
     volumes:
       - .:/app
